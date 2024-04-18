@@ -1,10 +1,19 @@
-﻿namespace toDolist.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace toDolist.Entities
 {
     public class User
     {
-        public int Id { get; set; } 
+        [Required]
+        [Key]
+        public int Id { get; set; }
+        public required string Name { get; set; }
+
         public string Address { get; set; } = string.Empty;
-        public required string Name { get; set; } 
+        
         public string Email { get; set; } = string.Empty;
+
+        public List<TodoItem> Talsks { get; set; }
     }
 }
