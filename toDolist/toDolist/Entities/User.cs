@@ -14,6 +14,6 @@ namespace toDolist.Entities
         
         public string Email { get; set; } = string.Empty;
 
-        public List<TodoItem> Talsks { get; set; }
+        public ICollection<TodoItem> Talsks { get; set; } =new List<TodoItem>();
     }
 }
